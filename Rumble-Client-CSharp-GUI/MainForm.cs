@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using RumbleClientLib;
 
 namespace Rumble_Client_GUI
 {
@@ -18,6 +19,7 @@ namespace Rumble_Client_GUI
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		private RumbleClientLib.RumbleClient _client = new RumbleClientLib.RumbleClient();
 		public MainForm()
 		{
 			//
@@ -29,9 +31,20 @@ namespace Rumble_Client_GUI
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		void ListView1SelectedIndexChanged(object sender, EventArgs e)
+		
+		void RichTextBox1KeyDown(object sender, KeyEventArgs e)
 		{
-	
+			if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Tab))
+            {
+                e.Handled = e.SuppressKeyPress = true;
+                if (e.KeyCode == Keys.Enter)
+                {
+                    var t = (RichTextBox)sender;
+                    string text = t.Text;
+                    // _client.Send(text);
+                    InputBox.Text = "";
+                }
+            }
 		}
 	}
 }

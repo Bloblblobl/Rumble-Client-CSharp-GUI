@@ -14,12 +14,15 @@ namespace Rumble_Client_GUI
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
-		private System.Windows.Forms.ListBox listBox1;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.SplitContainer MainSplitContainer;
+		private System.Windows.Forms.TabControl TabControl;
+		private System.Windows.Forms.TabPage UsersTab;
+		private System.Windows.Forms.TabPage LoginTab;
+		private System.Windows.Forms.ListBox MessageBox;
+		private System.Windows.Forms.RichTextBox InputBox;
+		private System.Windows.Forms.SplitContainer UsersSplitContainer;
+		private System.Windows.Forms.ListBox MembersListBox;
+		private System.Windows.Forms.ListBox FriendsListBox;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -42,102 +45,153 @@ namespace Rumble_Client_GUI
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.listBox1 = new System.Windows.Forms.ListBox();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-			this.splitContainer1.Panel1.SuspendLayout();
-			this.splitContainer1.Panel2.SuspendLayout();
-			this.splitContainer1.SuspendLayout();
-			this.tabControl1.SuspendLayout();
+			this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
+			this.InputBox = new System.Windows.Forms.RichTextBox();
+			this.MessageBox = new System.Windows.Forms.ListBox();
+			this.TabControl = new System.Windows.Forms.TabControl();
+			this.UsersTab = new System.Windows.Forms.TabPage();
+			this.UsersSplitContainer = new System.Windows.Forms.SplitContainer();
+			this.LoginTab = new System.Windows.Forms.TabPage();
+			this.MembersListBox = new System.Windows.Forms.ListBox();
+			this.FriendsListBox = new System.Windows.Forms.ListBox();
+			((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
+			this.MainSplitContainer.Panel1.SuspendLayout();
+			this.MainSplitContainer.Panel2.SuspendLayout();
+			this.MainSplitContainer.SuspendLayout();
+			this.TabControl.SuspendLayout();
+			this.UsersTab.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.UsersSplitContainer)).BeginInit();
+			this.UsersSplitContainer.Panel1.SuspendLayout();
+			this.UsersSplitContainer.Panel2.SuspendLayout();
+			this.UsersSplitContainer.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// splitContainer1
+			// MainSplitContainer
 			// 
-			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-			this.splitContainer1.Name = "splitContainer1";
+			this.MainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MainSplitContainer.Location = new System.Drawing.Point(0, 0);
+			this.MainSplitContainer.Name = "MainSplitContainer";
 			// 
-			// splitContainer1.Panel1
+			// MainSplitContainer.Panel1
 			// 
-			this.splitContainer1.Panel1.Controls.Add(this.richTextBox1);
-			this.splitContainer1.Panel1.Controls.Add(this.listBox1);
+			this.MainSplitContainer.Panel1.Controls.Add(this.InputBox);
+			this.MainSplitContainer.Panel1.Controls.Add(this.MessageBox);
 			// 
-			// splitContainer1.Panel2
+			// MainSplitContainer.Panel2
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-			this.splitContainer1.Size = new System.Drawing.Size(752, 582);
-			this.splitContainer1.SplitterDistance = 488;
-			this.splitContainer1.TabIndex = 0;
+			this.MainSplitContainer.Panel2.Controls.Add(this.TabControl);
+			this.MainSplitContainer.Size = new System.Drawing.Size(752, 582);
+			this.MainSplitContainer.SplitterDistance = 488;
+			this.MainSplitContainer.TabIndex = 0;
 			// 
-			// tabControl1
+			// InputBox
 			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(260, 582);
-			this.tabControl1.TabIndex = 0;
+			this.InputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this.InputBox.Location = new System.Drawing.Point(3, 546);
+			this.InputBox.Name = "InputBox";
+			this.InputBox.Size = new System.Drawing.Size(482, 33);
+			this.InputBox.TabIndex = 1;
+			this.InputBox.Text = "";
+			this.InputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RichTextBox1KeyDown);
 			// 
-			// tabPage1
+			// MessageBox
 			// 
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(252, 556);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "tabPage1";
-			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// tabPage2
-			// 
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(252, 556);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "tabPage2";
-			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// listBox1
-			// 
-			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.MessageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 			| System.Windows.Forms.AnchorStyles.Left) 
 			| System.Windows.Forms.AnchorStyles.Right)));
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(3, 3);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(482, 537);
-			this.listBox1.TabIndex = 0;
+			this.MessageBox.FormattingEnabled = true;
+			this.MessageBox.Location = new System.Drawing.Point(3, 3);
+			this.MessageBox.Name = "MessageBox";
+			this.MessageBox.Size = new System.Drawing.Size(482, 537);
+			this.MessageBox.TabIndex = 0;
 			// 
-			// richTextBox1
+			// TabControl
 			// 
-			this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.richTextBox1.Location = new System.Drawing.Point(3, 546);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(482, 33);
-			this.richTextBox1.TabIndex = 1;
-			this.richTextBox1.Text = "";
+			this.TabControl.Controls.Add(this.UsersTab);
+			this.TabControl.Controls.Add(this.LoginTab);
+			this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.TabControl.Location = new System.Drawing.Point(0, 0);
+			this.TabControl.Name = "TabControl";
+			this.TabControl.SelectedIndex = 0;
+			this.TabControl.Size = new System.Drawing.Size(260, 582);
+			this.TabControl.TabIndex = 0;
+			// 
+			// UsersTab
+			// 
+			this.UsersTab.Controls.Add(this.UsersSplitContainer);
+			this.UsersTab.Location = new System.Drawing.Point(4, 22);
+			this.UsersTab.Name = "UsersTab";
+			this.UsersTab.Padding = new System.Windows.Forms.Padding(3);
+			this.UsersTab.Size = new System.Drawing.Size(252, 556);
+			this.UsersTab.TabIndex = 0;
+			this.UsersTab.Text = "Users";
+			this.UsersTab.UseVisualStyleBackColor = true;
+			// 
+			// UsersSplitContainer
+			// 
+			this.UsersSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.UsersSplitContainer.Location = new System.Drawing.Point(3, 3);
+			this.UsersSplitContainer.Name = "UsersSplitContainer";
+			this.UsersSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			// 
+			// UsersSplitContainer.Panel1
+			// 
+			this.UsersSplitContainer.Panel1.Controls.Add(this.MembersListBox);
+			// 
+			// UsersSplitContainer.Panel2
+			// 
+			this.UsersSplitContainer.Panel2.Controls.Add(this.FriendsListBox);
+			this.UsersSplitContainer.Size = new System.Drawing.Size(246, 550);
+			this.UsersSplitContainer.SplitterDistance = 382;
+			this.UsersSplitContainer.TabIndex = 0;
+			// 
+			// LoginTab
+			// 
+			this.LoginTab.Location = new System.Drawing.Point(4, 22);
+			this.LoginTab.Name = "LoginTab";
+			this.LoginTab.Padding = new System.Windows.Forms.Padding(3);
+			this.LoginTab.Size = new System.Drawing.Size(252, 556);
+			this.LoginTab.TabIndex = 1;
+			this.LoginTab.Text = "Login";
+			this.LoginTab.UseVisualStyleBackColor = true;
+			// 
+			// MembersListBox
+			// 
+			this.MembersListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MembersListBox.FormattingEnabled = true;
+			this.MembersListBox.Location = new System.Drawing.Point(0, 0);
+			this.MembersListBox.Name = "MembersListBox";
+			this.MembersListBox.Size = new System.Drawing.Size(246, 382);
+			this.MembersListBox.TabIndex = 0;
+			// 
+			// FriendsListBox
+			// 
+			this.FriendsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.FriendsListBox.FormattingEnabled = true;
+			this.FriendsListBox.Location = new System.Drawing.Point(0, 0);
+			this.FriendsListBox.Name = "FriendsListBox";
+			this.FriendsListBox.Size = new System.Drawing.Size(246, 164);
+			this.FriendsListBox.TabIndex = 0;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(752, 582);
-			this.Controls.Add(this.splitContainer1);
+			this.Controls.Add(this.MainSplitContainer);
 			this.Name = "MainForm";
 			this.Text = "Rumble-Client-GUI";
-			this.splitContainer1.Panel1.ResumeLayout(false);
-			this.splitContainer1.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-			this.splitContainer1.ResumeLayout(false);
-			this.tabControl1.ResumeLayout(false);
+			this.MainSplitContainer.Panel1.ResumeLayout(false);
+			this.MainSplitContainer.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
+			this.MainSplitContainer.ResumeLayout(false);
+			this.TabControl.ResumeLayout(false);
+			this.UsersTab.ResumeLayout(false);
+			this.UsersSplitContainer.Panel1.ResumeLayout(false);
+			this.UsersSplitContainer.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.UsersSplitContainer)).EndInit();
+			this.UsersSplitContainer.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
