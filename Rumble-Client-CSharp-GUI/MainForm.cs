@@ -46,5 +46,10 @@ namespace Rumble_Client_GUI
                 }
             }
 		}
+		void DialogButtonClick(object sender, EventArgs e)
+		{
+			Form loginDialog = new LoginDialog();
+			loginDialog.Show();
+		}
 	}
 }

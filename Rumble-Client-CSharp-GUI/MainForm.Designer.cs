@@ -17,12 +17,15 @@ namespace Rumble_Client_GUI
 		private System.Windows.Forms.SplitContainer MainSplitContainer;
 		private System.Windows.Forms.TabControl TabControl;
 		private System.Windows.Forms.TabPage UsersTab;
-		private System.Windows.Forms.TabPage LoginTab;
 		private System.Windows.Forms.ListBox MessageBox;
 		private System.Windows.Forms.RichTextBox InputBox;
 		private System.Windows.Forms.SplitContainer UsersSplitContainer;
 		private System.Windows.Forms.ListBox MembersListBox;
 		private System.Windows.Forms.ListBox FriendsListBox;
+		private System.Windows.Forms.Button DialogButton;
+		private System.Windows.Forms.SplitContainer SideSplitContainer;
+		private System.Windows.Forms.SplitContainer LoginSplitContainer;
+		private System.Windows.Forms.Label LoginLabel;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -48,16 +51,27 @@ namespace Rumble_Client_GUI
 			this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
 			this.InputBox = new System.Windows.Forms.RichTextBox();
 			this.MessageBox = new System.Windows.Forms.ListBox();
+			this.SideSplitContainer = new System.Windows.Forms.SplitContainer();
+			this.LoginSplitContainer = new System.Windows.Forms.SplitContainer();
+			this.LoginLabel = new System.Windows.Forms.Label();
+			this.DialogButton = new System.Windows.Forms.Button();
 			this.TabControl = new System.Windows.Forms.TabControl();
 			this.UsersTab = new System.Windows.Forms.TabPage();
 			this.UsersSplitContainer = new System.Windows.Forms.SplitContainer();
-			this.LoginTab = new System.Windows.Forms.TabPage();
 			this.MembersListBox = new System.Windows.Forms.ListBox();
 			this.FriendsListBox = new System.Windows.Forms.ListBox();
 			((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
 			this.MainSplitContainer.Panel1.SuspendLayout();
 			this.MainSplitContainer.Panel2.SuspendLayout();
 			this.MainSplitContainer.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.SideSplitContainer)).BeginInit();
+			this.SideSplitContainer.Panel1.SuspendLayout();
+			this.SideSplitContainer.Panel2.SuspendLayout();
+			this.SideSplitContainer.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.LoginSplitContainer)).BeginInit();
+			this.LoginSplitContainer.Panel1.SuspendLayout();
+			this.LoginSplitContainer.Panel2.SuspendLayout();
+			this.LoginSplitContainer.SuspendLayout();
 			this.TabControl.SuspendLayout();
 			this.UsersTab.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.UsersSplitContainer)).BeginInit();
@@ -79,7 +93,7 @@ namespace Rumble_Client_GUI
 			// 
 			// MainSplitContainer.Panel2
 			// 
-			this.MainSplitContainer.Panel2.Controls.Add(this.TabControl);
+			this.MainSplitContainer.Panel2.Controls.Add(this.SideSplitContainer);
 			this.MainSplitContainer.Size = new System.Drawing.Size(752, 582);
 			this.MainSplitContainer.SplitterDistance = 488;
 			this.MainSplitContainer.TabIndex = 0;
@@ -106,15 +120,71 @@ namespace Rumble_Client_GUI
 			this.MessageBox.Size = new System.Drawing.Size(482, 537);
 			this.MessageBox.TabIndex = 0;
 			// 
+			// SideSplitContainer
+			// 
+			this.SideSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.SideSplitContainer.Location = new System.Drawing.Point(0, 0);
+			this.SideSplitContainer.Name = "SideSplitContainer";
+			this.SideSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			// 
+			// SideSplitContainer.Panel1
+			// 
+			this.SideSplitContainer.Panel1.Controls.Add(this.LoginSplitContainer);
+			// 
+			// SideSplitContainer.Panel2
+			// 
+			this.SideSplitContainer.Panel2.Controls.Add(this.TabControl);
+			this.SideSplitContainer.Size = new System.Drawing.Size(260, 582);
+			this.SideSplitContainer.SplitterDistance = 43;
+			this.SideSplitContainer.TabIndex = 1;
+			// 
+			// LoginSplitContainer
+			// 
+			this.LoginSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.LoginSplitContainer.Location = new System.Drawing.Point(0, 0);
+			this.LoginSplitContainer.Name = "LoginSplitContainer";
+			// 
+			// LoginSplitContainer.Panel1
+			// 
+			this.LoginSplitContainer.Panel1.Controls.Add(this.LoginLabel);
+			// 
+			// LoginSplitContainer.Panel2
+			// 
+			this.LoginSplitContainer.Panel2.Controls.Add(this.DialogButton);
+			this.LoginSplitContainer.Size = new System.Drawing.Size(260, 43);
+			this.LoginSplitContainer.SplitterDistance = 152;
+			this.LoginSplitContainer.TabIndex = 0;
+			// 
+			// LoginLabel
+			// 
+			this.LoginLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.LoginLabel.Location = new System.Drawing.Point(0, 0);
+			this.LoginLabel.Name = "LoginLabel";
+			this.LoginLabel.Size = new System.Drawing.Size(152, 43);
+			this.LoginLabel.TabIndex = 0;
+			this.LoginLabel.Text = "You are not logged in...";
+			this.LoginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// DialogButton
+			// 
+			this.DialogButton.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.DialogButton.Location = new System.Drawing.Point(0, 0);
+			this.DialogButton.Name = "DialogButton";
+			this.DialogButton.Size = new System.Drawing.Size(104, 43);
+			this.DialogButton.TabIndex = 0;
+			this.DialogButton.Text = "Login / Register";
+			this.DialogButton.UseVisualStyleBackColor = true;
+			this.DialogButton.Click += new System.EventHandler(this.DialogButtonClick);
+			// 
 			// TabControl
 			// 
 			this.TabControl.Controls.Add(this.UsersTab);
-			this.TabControl.Controls.Add(this.LoginTab);
 			this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TabControl.Location = new System.Drawing.Point(0, 0);
 			this.TabControl.Name = "TabControl";
 			this.TabControl.SelectedIndex = 0;
-			this.TabControl.Size = new System.Drawing.Size(260, 582);
+			this.TabControl.Size = new System.Drawing.Size(260, 535);
 			this.TabControl.TabIndex = 0;
 			// 
 			// UsersTab
@@ -123,7 +193,7 @@ namespace Rumble_Client_GUI
 			this.UsersTab.Location = new System.Drawing.Point(4, 22);
 			this.UsersTab.Name = "UsersTab";
 			this.UsersTab.Padding = new System.Windows.Forms.Padding(3);
-			this.UsersTab.Size = new System.Drawing.Size(252, 556);
+			this.UsersTab.Size = new System.Drawing.Size(252, 509);
 			this.UsersTab.TabIndex = 0;
 			this.UsersTab.Text = "Users";
 			this.UsersTab.UseVisualStyleBackColor = true;
@@ -142,19 +212,9 @@ namespace Rumble_Client_GUI
 			// UsersSplitContainer.Panel2
 			// 
 			this.UsersSplitContainer.Panel2.Controls.Add(this.FriendsListBox);
-			this.UsersSplitContainer.Size = new System.Drawing.Size(246, 550);
-			this.UsersSplitContainer.SplitterDistance = 382;
+			this.UsersSplitContainer.Size = new System.Drawing.Size(246, 503);
+			this.UsersSplitContainer.SplitterDistance = 348;
 			this.UsersSplitContainer.TabIndex = 0;
-			// 
-			// LoginTab
-			// 
-			this.LoginTab.Location = new System.Drawing.Point(4, 22);
-			this.LoginTab.Name = "LoginTab";
-			this.LoginTab.Padding = new System.Windows.Forms.Padding(3);
-			this.LoginTab.Size = new System.Drawing.Size(252, 556);
-			this.LoginTab.TabIndex = 1;
-			this.LoginTab.Text = "Login";
-			this.LoginTab.UseVisualStyleBackColor = true;
 			// 
 			// MembersListBox
 			// 
@@ -162,7 +222,7 @@ namespace Rumble_Client_GUI
 			this.MembersListBox.FormattingEnabled = true;
 			this.MembersListBox.Location = new System.Drawing.Point(0, 0);
 			this.MembersListBox.Name = "MembersListBox";
-			this.MembersListBox.Size = new System.Drawing.Size(246, 382);
+			this.MembersListBox.Size = new System.Drawing.Size(246, 348);
 			this.MembersListBox.TabIndex = 0;
 			// 
 			// FriendsListBox
@@ -171,7 +231,7 @@ namespace Rumble_Client_GUI
 			this.FriendsListBox.FormattingEnabled = true;
 			this.FriendsListBox.Location = new System.Drawing.Point(0, 0);
 			this.FriendsListBox.Name = "FriendsListBox";
-			this.FriendsListBox.Size = new System.Drawing.Size(246, 164);
+			this.FriendsListBox.Size = new System.Drawing.Size(246, 151);
 			this.FriendsListBox.TabIndex = 0;
 			// 
 			// MainForm
@@ -186,6 +246,14 @@ namespace Rumble_Client_GUI
 			this.MainSplitContainer.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
 			this.MainSplitContainer.ResumeLayout(false);
+			this.SideSplitContainer.Panel1.ResumeLayout(false);
+			this.SideSplitContainer.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.SideSplitContainer)).EndInit();
+			this.SideSplitContainer.ResumeLayout(false);
+			this.LoginSplitContainer.Panel1.ResumeLayout(false);
+			this.LoginSplitContainer.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.LoginSplitContainer)).EndInit();
+			this.LoginSplitContainer.ResumeLayout(false);
 			this.TabControl.ResumeLayout(false);
 			this.UsersTab.ResumeLayout(false);
 			this.UsersSplitContainer.Panel1.ResumeLayout(false);
