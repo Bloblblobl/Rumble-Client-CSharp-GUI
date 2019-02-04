@@ -1,2 +1,2 @@
 # Rumble-Client-CSharp-GUI
-C# GUI for Rumble Client
+C# GUI for Rumble Client (Abandoned)
